@@ -37,9 +37,9 @@ public final class App {
 
         System.out.println("/n=============================/n");
 
-        // for (Pacote pacote : pacotes) {
-        //     System.out.println(pacote);
-        // }
+        for (Pacote pacote : pacotes) {
+            System.out.println(pacote);
+        }
 
     }
 }

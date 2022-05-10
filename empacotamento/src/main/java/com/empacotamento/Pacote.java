@@ -17,7 +17,7 @@ public class Pacote {
 
   @Override
   public final String toString() {
-    return ("Produto: " + this.getProduto().getQuantidade() + 
+    return ("Quantidade de produtos: " + this.getProduto().getQuantidade() + 
            " | Tamanho pacote: " + this.getTamanho());
   }
 
@@ -26,8 +26,10 @@ public class Pacote {
       int quantidadeCabivel = this.tamanhoMaximo / produto.getTamanho();
 
       if (produto.getQuantidade() <= quantidadeCabivel) {
-        this.produto = produto;
-        this.setTamanho(produto.getQuantidade() * produto.getTamanho());
+        int quantidadeProduto = produto.getQuantidade();
+        System.out.println("quantidadeProduto: " + quantidadeProduto);
+        this.produto = Produto.extrairQuantidade(produto, quantidadeProduto);
+        this.setTamanho(quantidadeProduto * produto.getTamanho());
 
         return false;
       } else {
